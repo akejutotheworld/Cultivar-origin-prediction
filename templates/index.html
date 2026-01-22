@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wine Cultivator Predictor</title>
+<link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+<div class="container">
+<h1>Wine Cultivator Prediction</h1>
+<form method="POST">
+{% for i in range(13) %}
+<input type="number" step="any" name="f{{ i }}" placeholder="Feature {{ i+1 }}" required>
+{% endfor %}
+<button type="submit">Predict</button>
+</form>
+
+
+{% if prediction %}
+<h2>Predicted Origin: {{ prediction }}</h2>
+{% endif %}
+</div>
+</body>
+</html>
